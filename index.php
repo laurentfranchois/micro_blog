@@ -40,7 +40,7 @@ while ($data = $stmt->fetch()) {
 		<?= $data['contenu']?>
     <a href="index.php?id=<?=$data['id']?>"><button type="button" class="btn btn-success btn-lg">Modifier</button></a>
     <a href="suppression_message.php?id=<?=$data['id']?>"><button type="button" class="btn btn-primary btn-lg">Supprimer</button></a>
-    <?= $data['date'] ?>
+    <?= date("Y-a-m H:i:s",$data['dateC']) ?>
 
 
 	</blockquote>
