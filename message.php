@@ -9,7 +9,7 @@ if (isset($_POST['message']) && !empty($_POST['message'])) {
 		$prep->bindValue(2,$_POST['id']);
 	}
 	else{
-		$query = 'INSERT INTO messages (contenu) VALUES (?)';
+		$query = 'INSERT INTO messages (contenu,date) VALUES (?,UNIX_TIMESTAMP())';
 		$prep = $pdo->prepare($query);
 		$prep->bindValue(1,$_POST['message']);
 	}
